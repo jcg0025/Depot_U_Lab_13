@@ -18,7 +18,8 @@ var app = angular.module('myApp', ['ngRoute', 'ngResource'])
             url: '/messages',
             method: 'GET'
         }).then(function(success){
-            $scope.content = success.data;
+            $scope.array = success.data;
+            $scope.content = $scope.array.reverse();
         }, function(error){
             console.log(error);
         });
@@ -38,10 +39,19 @@ var app = angular.module('myApp', ['ngRoute', 'ngResource'])
             }).then(function(success){
                 $scope.createdAt = new Date();
                 $scope.newContent = success.data;
-                console.log(success);
+                
             }, function(error){
                 console.log(error);
             })
+            $http({
+                url: '/messages',
+                method: 'GET'
+            }).then(function(success){
+                $scope.array = success.data;
+                $scope.content = $scope.array.reverse();
+            }, function(error){
+                console.log(error);
+            });
         }
             
         
