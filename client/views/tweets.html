@@ -1,0 +1,25 @@
+<h1>{{tweetsMessage}}</h1>
+<h4>Hello {{welcome.userName}}!</h4>
+<input type="text" ng-model='tweet.text'>
+<button ng-click='postTweet()'>Post</button>
+<br>
+<br>
+<div>
+    {{createdAt}}
+    <br>
+    <strong>{{newContent.user}}</strong>
+    <br>
+    {{newContent.text}}
+    <br>
+    <br>
+<div ng-repeat="i in content">
+  <div class='tweetContainer'>
+    {{i.createdAt}}
+    <br>
+    <strong>{{i.user}}</strong>
+    <br>
+    {{i.text}}
+    <br>
+    <br>
+  </div>
+</div>
