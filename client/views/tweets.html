@@ -1,20 +1,21 @@
-<h1>{{tweetsMessage}}</h1>
-<h4>Hello {{welcome.userName}}!</h4>
-<input type="text" ng-model='tweet.text'>
-<button ng-click='postTweet()'>Post</button>
+<h1 class='much'>{{tweetsMessage}}</h1>
+<h4 class='hello'>Hello {{welcome.userName}}!</h4>
+<input class='input2' type="text" ng-model='tweet.text'>
+<button class='button2' ng-click='postTweet()'>Post</button>
 <br>
 <br>
-<div>
-    {{createdAt}}
+<div class='newTweetContainer'>
+    {{createdAt | date: 'medium'}}
     <br>
     <strong>{{newContent.user}}</strong>
     <br>
     {{newContent.text}}
     <br>
     <br>
+</div>
 <div ng-repeat="i in content">
   <div class='tweetContainer'>
-    {{i.createdAt}}
+    {{i.createdAt | date: 'medium'}}
     <br>
     <strong>{{i.user}}</strong>
     <br>

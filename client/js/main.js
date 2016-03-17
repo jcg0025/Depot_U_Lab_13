@@ -49,10 +49,15 @@ var app = angular.module('myApp', ['ngRoute', 'ngResource'])
             }).then(function(success){
                 $scope.array = success.data;
                 $scope.content = $scope.array.reverse();
+                
             }, function(error){
                 console.log(error);
             });
         }
+        
+        $('button').click(function(){
+            $('input').val('');
+        })
             
         
         
