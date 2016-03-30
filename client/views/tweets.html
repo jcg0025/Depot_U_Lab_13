@@ -1,25 +1,30 @@
 <h1 class='much'>{{tweetsMessage}}</h1>
 <h4 class='hello'>Hello {{welcome.userName}}!</h4>
-<input class='input2' type="text" ng-model='tweet.text'>
+<textarea class = 'col-xs-6 col-xs-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3  col-lg-6 col-lg-offset-3'id='input2' type="text" ng-model='tweet.text' cols="40" rows="5"></textarea>
 <button class='button2' ng-click='postTweet()'>Post</button>
 <br>
 <br>
-<div class='newTweetContainer'>
+<br>
+<br>
+<br>
+<br>
+
+<div  id='newTweetContainer'>
     {{createdAt | date: 'medium'}}
     <br>
-    <strong>{{newContent.user}}</strong>
+    <strong class='user'>{{newContent.user}}</strong>
     <br>
     {{newContent.text}}
     <br>
     <br>
 </div>
-<div ng-repeat="i in content">
+<div ng-repeat="tweet in tweets">
   <div class='tweetContainer'>
-    {{i.createdAt | date: 'medium'}}
+    {{tweet.createdAt | date: 'medium'}}
     <br>
-    <strong>{{i.user}}</strong>
+    <strong class='user'>{{tweet.user}}</strong>
     <br>
-    {{i.text}}
+    {{tweet.text}}
     <br>
     <br>
   </div>

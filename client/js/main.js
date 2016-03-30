@@ -8,18 +8,14 @@ var app = angular.module('myApp', ['ngRoute', 'ngResource'])
             $location.path('tweets/')
         }
 	}]);
-    app.controller('tweetsController', ['$scope', '$rootScope', '$http', '$resource', function($scope, $rootScope, $http, $resource){
+    app.controller('tweetsController', ['$scope', '$rootScope', '$http', function($scope, $rootScope, $http){
         $scope.tweetsMessage = 'much tweets';
-        // var tweets = $resource('http://localhost:3000/server/data.json');
-        // $scope.loadTweets = function(){
-        //     tweets.get();
-        // }
         $http({
             url: '/messages',
             method: 'GET'
         }).then(function(success){
             $scope.array = success.data;
-            $scope.content = $scope.array.reverse();
+            $scope.tweets = $scope.array.reverse();
         }, function(error){
             console.log(error);
         });
@@ -56,7 +52,8 @@ var app = angular.module('myApp', ['ngRoute', 'ngResource'])
         }
         
         $('button').click(function(){
-            $('input').val('');
+            $('#input').val('');
+            $('#input2').val('');
         })
             
         
